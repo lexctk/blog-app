@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+<div class="ui first container">
+    <h1 class="ui huge header">Blog Index</h1>
+    
+    <% blogs.forEach (function (blog) { %>
+        <div class="ui piled segment">
+            <h2 class="ui header"><a href="/blogs/<%= blog._id %>"><%= blog.title %></a></h2>
+
+            <div class="meta spacer"><%= moment(blog.created).format(dateFormat); %></div>
+            
+            <img class="featured listing spacer" src="<%= blog.image %>" alt="<%= blog.title %>">
+            
+            <div class="description spacer">
+                <% if (blog.summary) { %>
+                    <%- blog.summary %>...
+                <% } else { %>
+                    <%- blog.body.substring(0, 200) %>...
+                <% } %>
+            </div>
+            
+            <div class="extra spacer"><a class="ui teal button" href="/blogs/<%= blog._id %>">Read More</a></div>
+        </div>
+    <% }); %>
+</div>
+
+<% include partials/footer %>

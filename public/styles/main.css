@@ -1,0 +1,36 @@
+.icon {
+    font-size: 1.3em;
+}
+
+.container.first {
+    margin-top: 5.0em;
+}
+
+.featured {
+    width: 100%;
+}
+
+.featured.listing {
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.spacer {
+    margin-top: 1.5em;
+}
+
+.content {
+    white-space: pre-wrap;
+}
+
+.header a {
+    color: rgba(0,0,0,.87);
+}
+
+.header a:hover {
+    color: teal;
+}
+
+.inline {
+    display: inline;
+}
