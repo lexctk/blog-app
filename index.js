@@ -8,7 +8,6 @@ var expressSanitizer = require ("express-sanitizer");
 var moment = require('moment');
 var dateFormat = "dddd, MMMM Do YYYY";
 
-mongoose.connect("mongodb://localhost/blog");
 app.use (express.static("public"));
 app.use (bodyParser.urlencoded( { extended : true } ));
 app.use (methodOverride("_method"));
@@ -19,16 +18,9 @@ app.set("view engine", "ejs");
 app.locals.moment = moment;
 app.locals.dateFormat = dateFormat;
 
-//mongoose model config
-var blogSchema = new  mongoose.Schema ({
-    title: String,
-    image: String,
-    body: String, 
-    summary: String,
-    created: {type: Date, default: Date.now}
-});
+mongoose.connect("mongodb://localhost/blog");
 
-var Blog = mongoose.model ("Blog", blogSchema);
+var Blog = require("./models/blog");
 
 //ROOT route
 app.get("/", function(req, res) {

@@ -34,3 +34,9 @@
 .inline {
     display: inline;
 }
+
+.footer {
+  margin: 0em;
+  border-radius: 0em;
+  padding: 4em 0em 4em 0em;
+}
