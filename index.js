@@ -8,7 +8,7 @@ var expressSanitizer = require ("express-sanitizer");
 var moment = require('moment');
 var dateFormat = "dddd, MMMM Do YYYY";
 
-app.use (express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use (bodyParser.urlencoded( { extended : true } ));
 app.use (methodOverride("_method"));
 app.use (expressSanitizer());
